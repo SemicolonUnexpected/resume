@@ -1,4 +1,4 @@
-#import "templates/resume.template.typ": *
+#import "templates/resume-template.typ": *
 
 #show: resume.with(
   author: "Matthew Gracey",
@@ -19,22 +19,30 @@
 #edu(
   institution: "University of St Andrews",
   date: "Sep 2025 - Present (Expected Graduation June 2029)",
-  degrees: (
+  education: (
     ("MSci (Hons)", "Computer Science (direct entry)"),
   ),
   details: [
     - Second Year Modules (Dean's List)
       - Foundations of Computation (Accelerated) | 18.8/20
-      - The Internet and the Web: Concepts and Programming | 17.4/20
+      // - The Internet and the Web: Concepts and Programming | 17.4/20
       - Advanced Programming Projects | 18.0/20
       - Computer Systems | 19.0/20
+    - Third Year Modules (Semester 1)
+      - Artificial Intelligence
+      - Operating Systems
+      - Logic and Reasoning
+      - Software Engineering Team Project
+    // - Data Communications and Networks
+    // - Computational Complexity
+    // - Databases
   ],
 )
 
 #edu(
   institution: "Friends' School Lisburn",
   date: "Sep 2019 - Jun 2025",
-  degrees: (
+  education: (
     (
       "A Levels",
       "4 A*s in Mathematics, Further Mathematics, Software Systems Development and Chemistry",
@@ -48,13 +56,13 @@
     - Awards & Recognition
       - A Level Subject Prizes | Further Mathematics, Software Systems Development
       - Greer Cup | Outstanding achievement at A Level
-      - Sinton Prize | Services to Friends' School Lisburn
-      - Old Scholars' Prize | Outstanding achievement at GCSE
-      - GCSE Subject Prizes | Physics, Chemistry, German
+    // - Sinton Prize | Services to Friends' School Lisburn
+    // - Old Scholars' Prize | Outstanding achievement at GCSE
+    // - GCSE Subject Prizes | Physics, Chemistry, German
     - Mathematics
       - Senior Maths Challenge | Gold, Best in Year (A Level)
       - Intermediate Maths Challenge | Silver (GCSE Level)
-      - Queens University Maths Challenge | 2nd Place (A Level)
+      - Queens University Maths Challenge Team | 1st Place (2024), 2nd Place (2023)
   ],
 )
 
@@ -115,14 +123,40 @@ Prior to graduating, I opted to go with option 2 and never ran into issues. In g
 
 = Projects
 
+/*
 #exp(
   role: link(
-    "https://github.com/SemicolonUnexpected/project-euler",
-  )[Project Euler],
-  project: "Completed 78 problems",
+    "https://github.com/SemicolonUnexpected/a2-coursework/tree/main/a2-coursework",
+  )[Inventory Management System],
+  summary: "CCEA A Level Coursework for a removals company",
   details: [
-    - Solved in a variety of languages, including *Python* and *C\#*
-    - Iteratively improved upon a prime sieve, speeding up problem solutions
+    - Planned, developed and documented an advanced stock management system in *Windows Forms*
+    - Used a *Microsoft SQL Server* database
+    - Used the *Model View Presenter (MVP)* design pattern
+    - Created and optimised the drawing of configurable *User Controls* to improve the outdated UI
+    - Created a custom *CSV* serialiser and parser with escape sequences
+    - Marked highest in class (49/50)
+  ],
+)
+*/
+
+#exp(
+  role: [StACSOS Development],
+  summary: "University Coursework - Operating Systems",
+  details: [
+    - Implemented a *buddy memory allocator* in *C++* that splits misaligned physical page ranges into correctly aligned blocks using `__builtin_ctzll` and `__builtin_clzll` for single-instruction order calculations
+    - Optimised allocation and freeing with *O(1)* block removal from free lists and in-traversal *buddy merging* (via PFN XOR), avoiding repeated list walks
+    // - Designed a new *system call* and extended the *FAT filesystem driver* to pass directory listings from kernel to user space, powering an `ls` command with a `-l` long-listing flag
+  ],
+)
+
+#exp(
+  role: [SameGame A\* Solver],
+  summary: "University Coursework - Artificial Intelligence",
+  details: [
+    - Implemented an *A\** solver for SameGame in *Java* and benchmarked 2 heuristics, varying grid size, colour count and colour clustering, then *plotted* the results to compare scaling
+    - Decreased nodes by 500% on $5 times 5$ grids by adding a *state cache* and *pruning* unsolvable states
+    - Reduced memory use with *structural sharing*. Each state copies only the columns a move changes, and move history is a shared linked list
   ],
 )
 
@@ -130,27 +164,58 @@ Prior to graduating, I opted to go with option 2 and never ran into issues. In g
   role: link(
     "https://github.com/SemicolonUnexpected/wordscapes-bot",
   )[Wordscapes Bot],
-  project: "Taught a 3D printer to play Wordscapes",
+  summary: "Taught a 3D printer to play Wordscapes",
   details: [
-    - Modified my 3D printer to use *Klipper* with a *Raspberry Pi*
     - Created a *Python* script that used the *Android Debug Bridge* to screenshot the Wordscapes game on a phone, used *OpenCV* to identify the word wheel (thresholding, then binary XOR with a dictionary of images) and find all the solutions
-    - Generated 3D printer controls (G-code), and sent them over the network to the Raspberry Pi to move a capacitive touch stylus attached to the printhead
+    - Modified my 3D printer to use *Klipper* with a *Raspberry Pi* then generated G-code, and sent them over the network to the Raspberry Pi to move a capacitive touch stylus attached to the printhead
+  ],
+)
+
+#exp(
+  role: [Expression Quest Haskell],
+  summary: "University Coursework - Declarative & Functional Programming (Group Project)",
+  details: [
+    - Engineered and tested an arithmetic language toolchain in *Haskell* featuring custom *monadic parsing* and error recovery
+    - Built an incremental-step evaluator tracking step-by-step reductions
+    // - Implemented AST *canonicalization* by flattening and sorting associative/commutative binary trees
+    - Designed a *dynamic programming* solver using *list monads*, custom partitioning, and *memoization* maps to generate target expressions
+    - Worked with other groups members to integrate code and build a cohesive game
   ],
 )
 
 #exp(
   role: link(
-    "https://github.com/SemicolonUnexpected/a2-coursework/tree/main/a2-coursework",
-  )[Inventory Management System],
-  project: "CCEA A Level Coursework for a removals company",
+    "https://github.com/SemicolonUnexpected/lox-csharp-interpreter",
+  )[Lox C\# Interpreter],
+  summary: "A C# implementation based on the \"Crafting Interpreters\" book",
   details: [
-    - Planned, developed and documented an advanced stock management system in *Windows Forms*
-    - Used a *Microsoft SQL Server* database
-    - Used the *Model View Presenter (MVP)* design pattern
-    - Marked highest in class (49/50)
+    - Developed a *lexer* and *parser* to create an *abstract syntax tree (AST)*
+    - Used the *Visitor Pattern* to allow dynamic dispatch for evaluators (i.e., the interpreter and the AST printer)
   ],
 )
 
+#exp(
+  role: [Modal Logic Tableau Solver],
+  summary: "University Coursework - Logic and Reasoning",
+  details: [
+    - Built a *Python* CLI that decides satisfiability of propositional modal formulae using the tableau calculus *$cal(C) upright(bold(K))$*, with a *recursive descent parser* and descriptive error reporting
+    - Limited exponential tableau growth by *normalising* formulae (flattening and sorting commutative operators, removing duplicates) and ordering rule application to close branches early
+    - Wrote *94 unit tests* with *Pytest*, including a random formula generator, and used a development environment in a *Nix* flake
+  ],
+)
+
+/*
+#exp(
+  role: [DPLL SAT Solver],
+  project: "University Coursework - Computer Systems",
+  details: [
+    - Implemented a recursive *DPLL SAT solver* in *C* with custom clause and clause-set ADTs, choosing data structures by complexity: *O(1)* clause removal by swapping with the last element, and in-place *O(n)* literal removal with a two-pointer compaction
+    - Tested with *unit tests*, a *stacscheck* suite of well- and badly-formed DIMACS files, and *1,000* SATLIB benchmark instances, with a reproducible *Nix* development environment
+  ],
+)
+*/
+
+/*
 #exp(
   role: link(
     "https://github.com/SemicolonUnexpected/as-coursework",
@@ -162,18 +227,18 @@ Prior to graduating, I opted to go with option 2 and never ran into issues. In g
     - Created a chemistry equation parser and serialiser
   ],
 )
+*/
 
 #exp(
   role: link(
-    "https://github.com/SemicolonUnexpected/lox-csharp-interpreter",
-  )[Lox C\# Interpreter],
-  project: "A C# implementation based on the \"Crafting Interpreters\" book",
+    "https://github.com/SemicolonUnexpected/project-euler",
+  )[Project Euler],
+  summary: "Completed 78 problems",
   details: [
-    - Developed a *lexer* and *parser* to create an *abstract syntax tree (AST)*
-    - Used the *Visitor Pattern* to allow dynamic dispatch for evaluators (i.e., the interpreter and the AST printer)
+    - Solved in a variety of languages, including *Python* and *C\#*
+    - Iteratively improved upon a *prime sieve*, speeding up problem solutions
   ],
 )
-
 
 = Skills
 
@@ -189,15 +254,15 @@ Prior to graduating, I opted to go with option 2 and never ran into issues. In g
   (
     "Languages",
     (
-      [C\#],
-      [Java],
       [Python],
-      [Haskell],
       [C],
       [C++],
+      [C\#],
+      [Java],
+      [Haskell],
+      [JavaScript],
       [HTML],
       [CSS],
-      [JavaScript],
     ),
   ),
 ))
@@ -320,10 +385,10 @@ The exception to this rule is that you should have a dedicated skills section if
 #exp(
   role: "First Tech Challenge (Robotics)",
   date: "2023 - 2026",
-  location: "Cambridge University, Copperbox Arena London",
+  location: "UK National Finals",
   summary: "Competed at multiple national finals",
   details: [
-    - Managed a team of 15 people in the design, building and programming of competition robots, progressing to national semi-finals for two consecutive years
+    - Managed a team of 15 people in the design, building and programming of competition robots, progressing to semi-finals at the national competition for two consecutive years
     - Worked in a team of 4 to develop the robot control systems in *Java* using *OOP composition* principles, implementing custom *PID(F)* controllers and *odometry*-based navigation
     - Contacted sponsors to acquire support, both financially and through hardware services
     - Mentored junior members and upcoming teams in programming and hardware design
@@ -343,6 +408,19 @@ The exception to this rule is that you should have a dedicated skills section if
 )
 
 #exp(
+  role: "Code Clock",
+  date: "4th - 7th Aug 2025",
+  location: "Queens' University Belfast",
+  summary: "Mentored students at a programming camp",
+  details: [
+    - Worked at a programming summer camp of forty 11-18 year olds, helping lead activities to develop computational thinking skills
+    - Taught programming concepts in *Python*, *C\#*, *Micro:bit* and block based programming for *Lego Mindstorms*, adapting concepts to different learning levels
+    - Guided students as they worked in teams to present a group project idea
+  ],
+)
+
+/*
+#exp(
   role: "Work Experience at Kainos",
   date: "19th - 21st Mar 2024",
   location: "Kainos Offices, Belfast",
@@ -352,18 +430,7 @@ The exception to this rule is that you should have a dedicated skills section if
     - Worked in a team to present a product idea and an accompanying showcase website
   ],
 )
-
-#exp(
-  role: "Code Clock",
-  date: "4th - 7th Aug 2025",
-  location: "Queens' University Belfast",
-  summary: "Mentored students at a programming camp",
-  details: [
-    - Worked at a programming summer camp of 40 11-18 year olds, helping lead activities to develop computational thinking skills
-    - Taught them programming concepts in *Python*, *C\#*, *Micro:bit* and block based programming for *Lego Mindstorms*, adapting concepts to different learning levels
-    - Guided students as they worked in teams to present a group project idea
-  ],
-)
+*/
 
 /*
 #exp(
@@ -678,13 +745,21 @@ In this section especially, I'd recommend following the guidance for hyperlinkin
 
 */
 
-//= Interests
-//
-//#interest(
-//  (("Music", "Grade 8 Piano (distinction), Grade 7 Violin (distinction)"),
-//  // ("Duke Of Edinburgh (Silver)", "Volunteered at Parkrun for 6 months"),
-//  ("Lisburn City Swimming Club", "up to 14 hours weekly training, Irish Nationals, Bree Cup"),
-//  ("UKROC", "Founded the FSL Rocketry Club, launched a competitively designed rocket at UK Nationals"),
-//  ("Mentoring", "FSL junior robotics and junior maths club, school prefect"))
-//)
+= Interests
+
+#interest(
+  (
+    ("Music", "Grade 8 Piano (distinction), Grade 7 Violin (distinction)"),
+    // ("Duke Of Edinburgh (Silver)", "Volunteered at Parkrun for 6 months"),
+    (
+      "Lisburn City Swimming Club",
+      "up to 14 hours weekly training, Irish Nationals, Bree Cup",
+    ),
+    (
+      "UKROC",
+      "Founded the FSL Rocketry Club, launched a competitively designed rocket at UK Nationals",
+    ),
+    // ("Mentoring", "FSL junior robotics and junior maths club, school prefect"),
+  ),
+)
 
