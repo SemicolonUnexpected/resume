@@ -155,7 +155,7 @@ Prior to graduating, I opted to go with option 2 and never ran into issues. In g
   summary: "University Coursework - Artificial Intelligence",
   details: [
     - Implemented an *A\** solver for SameGame in *Java* and benchmarked 2 heuristics, varying grid size, colour count and colour clustering, then *plotted* the results to compare scaling
-    - Decreased nodes by 500% on $5 times 5$ grids by adding a *state cache* and *pruning* unsolvable states
+    - Decreased nodes by 80% on $5 times 5$ grids by adding a *state cache* and *pruning* unsolvable states
     - Reduced memory use with *structural sharing*. Each state copies only the columns a move changes, and move history is a shared linked list
   ],
 )

@@ -11,19 +11,22 @@
 
 #line(length: 100%, stroke: 1pt)
 
+Dear Graphcore Early Careers Team,
 
-Dear Hiring Team,
+I'm a third-year Computer Science (integrated masters) student at the University of St Andrews, applying for the Software Engineer Summer Intern role in AI Compute Libraries & Performance.
 
-I’m a third-year Computer Science (integrated masters) student at St Andrews.
+In my Operating Systems coursework I implemented a buddy page allocator in C++. Physical memory could arrive in misaligned ranges (due to reserved memory regions), so I split each one into aligned blocks using `__builtin_ctzll` and `__builtin_clzll`. I optimised freeing by merging buddies in a single list traversal instead of repeated passes.
 
-For my Operating Systems coursework I implemented a buddy page allocator in C++. Physical memory arrives in misaligned ranges, so I split each one into aligned blocks using __builtin_ctzll and __builtin_clzll, and I made freeing cheaper by merging buddies in a single list traversal instead of repeated passes. .
+In my AI coursework I wrote an A\* solver for SameGame in Java and benchmarked two heuristics, varying grid size, number of colours and clustering. I optimised the algorithm to cache states and prune unsolvable ones. I reduced nodes explored by 80% on 5 × 5 grids. I modelled the board as a jagged array and shared unchanged memory between boards reducing memory usage. I plotted the results in Typst (with the Lilaq library) showing how the first (admissible) heuristic explored fewer nodes, while finding the solution with the fewest moves.
 
-I used the same approach in a Python modal-logic solver, where I cut exponential search growth by normalising formulae and ordering rules so branches close early. I wrote 94 unit tests with a random input generator so later optimisations could be checked against earlier behaviour, and I validated a DPLL solver in C on a thousand SATLIB instances. That is the regression-testing habit I’d want to apply to compute kernels.
+Additionally, I have experience with Python, C and unit testing. For a Python modal-logic solver I wrote 94 unit tests including a random input generator so later optimisations could be checked against earlier behaviour, and I validated a DPLL solver in C on a thousand SATLIB instances.
 
-I haven’t yet written numerical kernels, which is where I’d learn the most. My maths background is strong (A\* in Maths and Further Maths, Gold in the Senior Maths Challenge), and I led a team of 15 in the First Tech Challenge, writing PID and odometry control software for competition robots.
+I have a strong mathematical background (A\* in Maths and Further Maths, Gold in the Senior Maths Challenge). Furthermore, I enjoy problem solving and have solved 78 Project Euler problems.
 
-[One specific, true reason for Graphcore.]
+I led a team of 15 in the First Tech Challenge where we designed, built and wrote control software (PIDF, odometry control) for competitive robots.
 
-Thank you for your time.
+I am interested in this internship as I enjoy making algorithms faster and optimising them. I would like to gain a deeper understanding of numerical validation for algorithms and work on threading-based optimisations. I am also interested in designing algorithms in closer alignment with specific hardware and memory layouts.
+
+Many thanks,
 
 Matthew Gracey
