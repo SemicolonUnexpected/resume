@@ -18,7 +18,7 @@
 
 #edu(
   institution: "University of St Andrews",
-  date: "Sep 2025 - Present (Expected Graduation June 2029)",
+  date: "Sep 2025 - June 2029 (Expected)",
   education: (
     ("MSci (Hons)", "Computer Science (direct entry)"),
   ),
@@ -144,19 +144,18 @@ Prior to graduating, I opted to go with option 2 and never ran into issues. In g
   role: [StACSOS Development],
   summary: "University Coursework - Operating Systems",
   details: [
-    - Implemented a *buddy memory allocator* in *C++* that splits misaligned physical page ranges into correctly aligned blocks using `__builtin_ctzll` and `__builtin_clzll` for single-instruction order calculations
-    - Optimised allocation and freeing with *O(1)* block removal from free lists and in-traversal *buddy merging* (via PFN XOR), avoiding repeated list walks
-    // - Designed a new *system call* and extended the *FAT filesystem driver* to pass directory listings from kernel to user space, powering an `ls` command with a `-l` long-listing flag
+    - Implemented a C++ buddy allocator, splitting misaligned physical page ranges into aligned blocks using `__builtin_ctzll` and `__builtin_clzll` for single-instruction order calculations
+    - Optimised allocation and freeing with O(1) free-list removal and in-traversal buddy merging (PFN XOR), avoiding repeated list walks
+    - Extended the *FAT filesystem driver* and *system call* interface to pass directory listings from kernel to user space, powering an `ls` command with a `-l` `-a` and `-h` flags
   ],
 )
 
 #exp(
-  role: [SameGame A\* Solver],
-  summary: "University Coursework - Artificial Intelligence",
+  role: [DPLL SAT Solver],
+  summary: "University Coursework - Computer Systems",
   details: [
-    - Implemented an *A\** solver for SameGame in *Java* and benchmarked 2 heuristics, varying grid size, colour count and colour clustering, then *plotted* the results to compare scaling
-    - Decreased nodes by 80% on $5 times 5$ grids by adding a *state cache* and *pruning* unsolvable states
-    - Reduced memory use with *structural sharing*. Each state copies only the columns a move changes, and move history is a shared linked list
+    - Implemented a recursive *DPLL SAT solver* in *C* with custom clause and clause-set ADTs, choosing data structures by complexity: *O(1)* clause removal by swapping with the last element, and in-place *O(n)* literal removal with a two-pointer compaction
+    - Tested with *unit tests*, a *stacscheck* suite of well- and badly-formed DIMACS files, and *1,000* SATLIB benchmark instances, with a reproducible *Nix* development environment
   ],
 )
 
@@ -168,6 +167,16 @@ Prior to graduating, I opted to go with option 2 and never ran into issues. In g
   details: [
     - Created a *Python* script that used the *Android Debug Bridge* to screenshot the Wordscapes game on a phone, used *OpenCV* to identify the word wheel (thresholding, then binary XOR with a dictionary of images) and find all the solutions
     - Modified my 3D printer to use *Klipper* with a *Raspberry Pi* then generated G-code, and sent them over the network to the Raspberry Pi to move a capacitive touch stylus attached to the printhead
+  ],
+)
+
+#exp(
+  role: [SameGame A\* Solver],
+  summary: "University Coursework - Artificial Intelligence",
+  details: [
+    - Implemented an *A\** solver for SameGame in *Java* and benchmarked 2 heuristics, varying grid size, colour count and colour clustering, then *plotted* the results to compare scaling
+    - Decreased nodes by 80% on $5 times 5$ grids by adding a *state cache* and *pruning* unsolvable states
+    - Reduced memory use with *structural sharing*. Each state copies only the columns a move changes, and move history is a shared linked list
   ],
 )
 
@@ -206,17 +215,6 @@ Prior to graduating, I opted to go with option 2 and never ran into issues. In g
 
 /*
 #exp(
-  role: [DPLL SAT Solver],
-  project: "University Coursework - Computer Systems",
-  details: [
-    - Implemented a recursive *DPLL SAT solver* in *C* with custom clause and clause-set ADTs, choosing data structures by complexity: *O(1)* clause removal by swapping with the last element, and in-place *O(n)* literal removal with a two-pointer compaction
-    - Tested with *unit tests*, a *stacscheck* suite of well- and badly-formed DIMACS files, and *1,000* SATLIB benchmark instances, with a reproducible *Nix* development environment
-  ],
-)
-*/
-
-/*
-#exp(
   role: link(
     "https://github.com/SemicolonUnexpected/as-coursework",
   )[Chemistry Quiz Application],
@@ -229,6 +227,8 @@ Prior to graduating, I opted to go with option 2 and never ran into issues. In g
 )
 */
 
+// Commented out to save space. Uncomment if there is room.
+/*
 #exp(
   role: link(
     "https://github.com/SemicolonUnexpected/project-euler",
@@ -239,6 +239,7 @@ Prior to graduating, I opted to go with option 2 and never ran into issues. In g
     - Iteratively improved upon a *prime sieve*, speeding up problem solutions
   ],
 )
+*/
 
 = Skills
 
@@ -249,16 +250,18 @@ Prior to graduating, I opted to go with option 2 and never ran into issues. In g
       [Linux (Arch, #link("https://github.com/SemicolonUnexpected/nixos")[NixOS])],
       [Git],
       [GitHub],
+      [Onshape (CAD)],
+      [3D printing],
     ),
   ),
   (
     "Languages",
     (
-      [Python],
-      [C],
       [C++],
-      [C\#],
+      [C],
+      [Python],
       [Java],
+      [C\#],
       [Haskell],
       [JavaScript],
       [HTML],
@@ -388,6 +391,7 @@ The exception to this rule is that you should have a dedicated skills section if
   location: "UK National Finals",
   summary: "Competed at multiple national finals",
   details: [
+    // If you used Onshape for the robots, swap in: "design (*Onshape* CAD), building and programming"
     - Managed a team of 15 people in the design, building and programming of competition robots, progressing to semi-finals at the national competition for two consecutive years
     - Worked in a team of 4 to develop the robot control systems in *Java* using *OOP composition* principles, implementing custom *PID(F)* controllers and *odometry*-based navigation
     - Contacted sponsors to acquire support, both financially and through hardware services
@@ -745,6 +749,7 @@ In this section especially, I'd recommend following the guidance for hyperlinkin
 
 */
 
+/*
 = Interests
 
 #interest(
@@ -762,4 +767,4 @@ In this section especially, I'd recommend following the guidance for hyperlinkin
     // ("Mentoring", "FSL junior robotics and junior maths club, school prefect"),
   ),
 )
-
+*/
