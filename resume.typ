@@ -250,8 +250,6 @@ Prior to graduating, I opted to go with option 2 and never ran into issues. In g
       [Linux (Arch, #link("https://github.com/SemicolonUnexpected/nixos")[NixOS])],
       [Git],
       [GitHub],
-      [Onshape (CAD)],
-      [3D printing],
     ),
   ),
   (
